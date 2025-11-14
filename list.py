@@ -1,0 +1,9 @@
+list1=[]
+print()
+list2=[1,2,3,4,5]
+print(list2)
+list3=[2,3,4,5,6]*3
+print(list3)
+list4=[34,56,78,67,89]
+list4=list4[::-1]
+print(list4)
