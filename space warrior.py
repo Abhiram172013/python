@@ -24,9 +24,31 @@ playery=PLAYERSTART_Y
 playerx_change=0
 
 enemyImg=[]
-enemyx=[]
-enemyy=[]
-enemyx_change=[]
-enemyy_change=[]
+enemyX=[]
+enemyY=[]
+enemyX_change=[]
+enemyY_change=[]
 num_of_enemies=6
 
+for _i in range(6):
+    enemyImg.append(pygame.image.load('enemy.png'))
+    enemyX.append(random.randint(0,SCREENWIDTH-64))
+    enemyY.append(random.randint(ENEMYSTART_Y_MIN,ENEMYSTART_Y_MAX))
+    enemyX_change.append(ENEMYSPEED_X)
+    enemyY_change.append(ENEMYSPEED_Y)
+
+bulletImg=pygame.image.load('bullet.png')
+bulletX=0
+bulletY=PLAYERSTART_Y
+bulletX_change=0
+bulletY_change=BULLETSPEED_Y
+bullet_state="ready"
+
+score_value=0
+font=pygame.font.Font('freesansbold.ttf',32)
+textX=10
+textY=10
+over_font=pygame.font.Font('freesansbold.ttf',64)
+def show_score(x,y):
+    score=font.render("score:"+str(score_value),True,(255,255,255))
+    screen.blit(score,(x,y))
