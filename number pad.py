@@ -8,4 +8,11 @@ for i in range(4):
     window.rowconfigure(i,weight=1,minsize=50)
     for j in range(0,3):
         frame=Frame(master=window,relief=RAISED,borderwidth=1)
-        
+        # Import necessary libraries
+
+	    frame.grid(row=i, column=j)
+		label = Label(master=frame, text=nums[i][j], bg='#d0efff')
+		label.pack(padx=3, pady=3)
+
+# Start the GUI event loop
+root.mainloop()
